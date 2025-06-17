@@ -20,13 +20,13 @@
     "ts-mocha": "^10.0.0",
     "typescript": "5.2.2"
   },
-  "dependencies": {
-    "envio": "^2.22.3"
-  },
   "optionalDependencies": {
     "generated": "./generated"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "envio": "^2.22.3"
   }
 }
