@@ -1,0 +1,671 @@
+type Ambient_AuthorityTransfer {
+  id: ID!
+  authority: String!
+}
+
+type Ambient_CrocColdCmd {
+  id: ID!
+  input: String!
+}
+
+type Ambient_CrocColdProtocolCmd {
+  id: ID!
+  input: String!
+}
+
+type Ambient_CrocHotCmd {
+  id: ID!
+  input: String!
+  baseFlow: BigInt!
+  quoteFlow: BigInt!
+}
+
+type Ambient_CrocKnockoutCmd {
+  id: ID!
+  input: String!
+  baseFlow: BigInt!
+  quoteFlow: BigInt!
+}
+
+type Ambient_CrocKnockoutCross {
+  id: ID!
+  pool: String!
+  tick: BigInt!
+  isBid: Boolean!
+  pivotTime: BigInt!
+  feeMileage: BigInt!
+  commitEntropy: BigInt!
+}
+
+type Ambient_CrocMicroBurnAmbient {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambient_CrocMicroBurnRange {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambient_CrocMicroMintAmbient {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambient_CrocMicroMintRange {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambient_CrocMicroSwap {
+  id: ID!
+  input: String!
+  output: String!
+}
+
+type Ambient_CrocSwap {
+  id: ID!
+  base: String!
+  quote: String!
+  poolIdx: BigInt!
+  isBuy: Boolean!
+  inBaseQty: Boolean!
+  qty: BigInt!
+  tip: BigInt!
+  limitPrice: BigInt!
+  minOut: BigInt!
+  reserveFlags: BigInt!
+  baseFlow: BigInt!
+  quoteFlow: BigInt!
+}
+
+type Ambient_CrocWarmCmd {
+  id: ID!
+  input: String!
+  baseFlow: BigInt!
+  quoteFlow: BigInt!
+}
+
+type Ambient_DisablePoolTemplate {
+  id: ID!
+  poolIdx: BigInt!
+}
+
+type Ambient_HotPathOpen {
+  id: ID!
+  _0: Boolean!
+}
+
+type Ambient_PriceImproveThresh {
+  id: ID!
+  token: String!
+  unitTickCollateral: BigInt!
+  awayTickTol: BigInt!
+}
+
+type Ambient_ProtocolDividend {
+  id: ID!
+  token: String!
+  recv: String!
+}
+
+type Ambient_ResyncTakeRate {
+  id: ID!
+  base: String!
+  quote: String!
+  poolIdx: BigInt!
+  takeRate: BigInt!
+}
+
+type Ambient_SafeMode {
+  id: ID!
+  _0: Boolean!
+}
+
+type Ambient_SetNewPoolLiq {
+  id: ID!
+  liq: BigInt!
+}
+
+type Ambient_SetPoolTemplate {
+  id: ID!
+  poolIdx: BigInt!
+  feeRate: BigInt!
+  tickSize: BigInt!
+  jitThresh: BigInt!
+  knockout: BigInt!
+  oracleFlags: BigInt!
+}
+
+type Ambient_SetRelayerTakeRate {
+  id: ID!
+  takeRate: BigInt!
+}
+
+type Ambient_SetTakeRate {
+  id: ID!
+  takeRate: BigInt!
+}
+
+type Ambient_TreasurySet {
+  id: ID!
+  treasury: String!
+  startTime: BigInt!
+}
+
+type Ambient_UpgradeProxy {
+  id: ID!
+  proxy: String!
+  proxyIdx: BigInt!
+}
+
+type Castora_ClaimedWinnings {
+  id: ID!
+  poolId: BigInt!
+  predictionId: BigInt!
+  winner: String!
+  stakeToken: String!
+  stakedAmount: BigInt!
+  wonAmount: BigInt!
+}
+
+type Castora_CompletedPool {
+  id: ID!
+  poolId: BigInt!
+  snapshotTime: BigInt!
+  snapshotPrice: BigInt!
+  winAmount: BigInt!
+  noOfWinners: BigInt!
+}
+
+type Castora_CreatedPool {
+  id: ID!
+  poolId: BigInt!
+  seedsHash: String!
+}
+
+type Castora_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type Castora_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Castora_Predicted {
+  id: ID!
+  poolId: BigInt!
+  predictionId: BigInt!
+  predicter: String!
+  predictionPrice: BigInt!
+}
+
+type Castora_RoleAdminChanged {
+  id: ID!
+  role: String!
+  previousAdminRole: String!
+  newAdminRole: String!
+}
+
+type Castora_RoleGranted {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type Castora_RoleRevoked {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type Castora_Upgraded {
+  id: ID!
+  implementation: String!
+}
+
+type Clober_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type Clober_OwnershipTransferStarted {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Clober_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Clober_RouterMethodAdded {
+  id: ID!
+  router: String!
+  method: String!
+}
+
+type Clober_RouterMethodRemoved {
+  id: ID!
+  router: String!
+  method: String!
+}
+
+type Clober_Swap {
+  id: ID!
+  user: String!
+  inToken: String!
+  outToken: String!
+  amountIn: BigInt!
+  amountOut: BigInt!
+  router: String!
+  method: String!
+}
+
+type Clober_Upgraded {
+  id: ID!
+  implementation: String!
+}
+
+type Dusted_Claimed {
+  id: ID!
+  user: String!
+  tokenAmount: BigInt!
+  totalPointsClaimed: BigInt!
+}
+
+type Dusted_ClaimsToggled {
+  id: ID!
+  enabled: Boolean!
+}
+
+type Dusted_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Dusted_Withdraw {
+  id: ID!
+  amount: BigInt!
+}
+
+type Enjoyoors_Deposit {
+  id: ID!
+  token: String!
+  user: String!
+  amount: BigInt!
+}
+
+type Enjoyoors_MinDepositChanged {
+  id: ID!
+  token: String!
+  _old: BigInt!
+  _new: BigInt!
+}
+
+type Enjoyoors_NewTokenListed {
+  id: ID!
+  newToken: String!
+}
+
+type Enjoyoors_PauseClaims {
+  id: ID!
+  token: String!
+}
+
+type Enjoyoors_PauseDeposits {
+  id: ID!
+  token: String!
+}
+
+type Enjoyoors_PauseWithdrawals {
+  id: ID!
+  token: String!
+}
+
+type Enjoyoors_ResumeClaims {
+  id: ID!
+  token: String!
+}
+
+type Enjoyoors_ResumeDeposits {
+  id: ID!
+  token: String!
+}
+
+type Enjoyoors_ResumeWithdrawals {
+  id: ID!
+  token: String!
+}
+
+type Enjoyoors_RoleAdminChanged {
+  id: ID!
+  role: String!
+  previousAdminRole: String!
+  newAdminRole: String!
+}
+
+type Enjoyoors_RoleGranted {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type Enjoyoors_RoleRevoked {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type Enjoyoors_SupplyLimitDecreased {
+  id: ID!
+  token: String!
+  delta: BigInt!
+}
+
+type Enjoyoors_SupplyLimitIncreased {
+  id: ID!
+  token: String!
+  delta: BigInt!
+}
+
+type Enjoyoors_WithdrawalApproverChanged {
+  id: ID!
+  _old: String!
+  _new: String!
+}
+
+type Enjoyoors_WithdrawalClaimed {
+  id: ID!
+  requestId: BigInt!
+  amount: BigInt!
+}
+
+type Enjoyoors_WithdrawalRequested {
+  id: ID!
+  token: String!
+  user: String!
+  requestId: BigInt!
+  amount: BigInt!
+}
+
+type Kuru_Deposit {
+  id: ID!
+  owner: String!
+  token: String!
+  amount: BigInt!
+}
+
+type Kuru_Withdrawal {
+  id: ID!
+  owner: String!
+  token: String!
+  amount: BigInt!
+}
+
+type Magma_Deposit {
+  id: ID!
+  depositor: String!
+  amount: BigInt!
+  gMonMinted: BigInt!
+  referralId: BigInt!
+}
+
+type Magma_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type Magma_Withdraw {
+  id: ID!
+  withdrawer: String!
+  amount: BigInt!
+  gMonBurned: BigInt!
+}
+
+type MonTools_BatchTransfer {
+  id: ID!
+  from: String!
+  to: [String!]!
+  amount: BigInt!
+}
+
+type Monorail_Aggregated {
+  id: ID!
+  sender: String!
+  tokenIn: String!
+  tokenOut: String!
+  amount: BigInt!
+  destinationAmount: BigInt!
+  feeAmount: BigInt!
+}
+
+type Monorail_AggregatedTrade {
+  id: ID!
+  router: String!
+  tokenIn: String!
+  tokenOut: String!
+  amount: BigInt!
+}
+
+type Monorail_FeeMultiplierUpdated {
+  id: ID!
+  oldFeeMultiplier: BigInt!
+  newFeeMultiplier: BigInt!
+}
+
+type Monorail_FeeReceiverUpdated {
+  id: ID!
+  oldFeeReceiver: String!
+  newFeeReceiver: String!
+}
+
+type Monorail_NativeSenderAllowlistUpdated {
+  id: ID!
+  sender: String!
+  allowed: Boolean!
+}
+
+type Monorail_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Monorail_RouterAllowlistUpdated {
+  id: ID!
+  router: String!
+  allowed: Boolean!
+}
+
+type Monorail_TokenWithdrawn {
+  id: ID!
+  token: String!
+  to: String!
+  amount: BigInt!
+}
+
+type Madness_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type Madness_Burn {
+  id: ID!
+  account: String!
+  amount: BigInt!
+}
+
+type Madness_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Madness_Suspended {
+  id: ID!
+  suspended: Boolean!
+}
+
+type Madness_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+}
+
+type Madness_UpdateBlacklist {
+  id: ID!
+  account: String!
+  isListed: Boolean!
+}
+
+type Madness_UpdateOperator {
+  id: ID!
+  operator: String!
+  authorized: Boolean!
+}
+
+type Monad2048_NewGame {
+  id: ID!
+  player: String!
+  event_id: String!
+  board: BigInt!
+}
+
+type Monad2048_NewMove {
+  id: ID!
+  player: String!
+  event_id: String!
+  move: BigInt!
+  result: BigInt!
+}
+
+type RugRumble_GameEnded {
+  id: ID!
+  gameId: BigInt!
+  winner: String!
+  loser: String!
+  epochId: BigInt!
+  rewardAmount: BigInt!
+  winnerToken: String!
+  loserToken: String!
+}
+
+type RugRumble_GameSet {
+  id: ID!
+  gameId: BigInt!
+  epochId: BigInt!
+  token1: String!
+  token2: String!
+  wagerAmount1: BigInt!
+  wagerAmount2: BigInt!
+}
+
+type RugRumble_GameStarted {
+  id: ID!
+  gameId: BigInt!
+  player1: String!
+  player2: String!
+  epochId: BigInt!
+}
+
+type RugRumble_TokenDeposited {
+  id: ID!
+  gameId: BigInt!
+  player: String!
+  token: String!
+  epochId: BigInt!
+  amount: BigInt!
+}
+
+type RugRumble_WagerDistributed {
+  id: ID!
+  gameId: BigInt!
+  winner: String!
+  winnerShare: BigInt!
+  vaultShare: BigInt!
+  protocolShare: BigInt!
+  winnerToken: String!
+  loserToken: String!
+}
+
+type SwingMonad_Deposit {
+  id: ID!
+  user: String!
+  amount: BigInt!
+}
+
+type SwingMonad_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type SwingMonad_Withdraw {
+  id: ID!
+  user: String!
+  amount: BigInt!
+}
+
+type ZkSwap_Approval {
+  id: ID!
+  owner: String!
+  approved: String!
+  tokenId: BigInt!
+}
+
+type ZkSwap_ApprovalForAll {
+  id: ID!
+  owner: String!
+  operator: String!
+  approved: Boolean!
+}
+
+type ZkSwap_Collect {
+  id: ID!
+  tokenId: BigInt!
+  recipient: String!
+  amount0: BigInt!
+  amount1: BigInt!
+}
+
+type ZkSwap_DecreaseLiquidity {
+  id: ID!
+  tokenId: BigInt!
+  liquidity: BigInt!
+  amount0: BigInt!
+  amount1: BigInt!
+}
+
+type ZkSwap_IncreaseLiquidity {
+  id: ID!
+  tokenId: BigInt!
+  liquidity: BigInt!
+  amount0: BigInt!
+  amount1: BigInt!
+}
+
+type ZkSwap_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  tokenId: BigInt!
+}
+

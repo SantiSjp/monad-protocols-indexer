@@ -1,0 +1,179 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: santi]
+networks:
+- id: 10143
+  start_block: 0
+  contracts:
+  - name: Ambient
+    address:
+    - 0x88B96aF200c8a9c35442C8AC6cd3D22695AaE4F0
+    - 0x1C74Dd2DF010657510715244DA10ba19D1F3D2B7
+    - 0x70a6a0C905af5737aD73Ceba4e6158e995031d4B
+    handler: src/EventHandlers.ts
+    events:
+    - event: AuthorityTransfer(address indexed authority)
+    - event: CrocColdCmd(bytes input)
+    - event: CrocColdProtocolCmd(bytes input)
+    - event: CrocHotCmd(bytes input, int128 baseFlow, int128 quoteFlow)
+    - event: CrocKnockoutCmd(bytes input, int128 baseFlow, int128 quoteFlow)
+    - event: CrocKnockoutCross(bytes32 indexed pool, int24 indexed tick, bool isBid, uint32 pivotTime, uint64 feeMileage, uint160 commitEntropy)
+    - event: CrocMicroBurnAmbient(bytes input, bytes output)
+    - event: CrocMicroBurnRange(bytes input, bytes output)
+    - event: CrocMicroMintAmbient(bytes input, bytes output)
+    - event: CrocMicroMintRange(bytes input, bytes output)
+    - event: CrocMicroSwap(bytes input, bytes output)
+    - event: CrocSwap(address indexed base, address indexed quote, uint256 poolIdx, bool isBuy, bool inBaseQty, uint128 qty, uint16 tip, uint128 limitPrice, uint128 minOut, uint8 reserveFlags, int128 baseFlow, int128 quoteFlow)
+    - event: CrocWarmCmd(bytes input, int128 baseFlow, int128 quoteFlow)
+    - event: DisablePoolTemplate(uint256 indexed poolIdx)
+    - event: HotPathOpen(bool )
+    - event: PriceImproveThresh(address indexed token, uint128 unitTickCollateral, uint16 awayTickTol)
+    - event: ProtocolDividend(address indexed token, address indexed recv)
+    - event: ResyncTakeRate(address indexed base, address indexed quote, uint256 indexed poolIdx, uint8 takeRate)
+    - event: SafeMode(bool )
+    - event: SetNewPoolLiq(uint128 liq)
+    - event: SetPoolTemplate(uint256 indexed poolIdx, uint16 feeRate, uint16 tickSize, uint8 jitThresh, uint8 knockout, uint8 oracleFlags)
+    - event: SetRelayerTakeRate(uint8 takeRate)
+    - event: SetTakeRate(uint8 takeRate)
+    - event: TreasurySet(address indexed treasury, uint64 indexed startTime)
+    - event: UpgradeProxy(address indexed proxy, uint16 proxyIdx)
+  - name: Castora
+    address:
+    - 0xa0742C672e713327b0D6A4BfF34bBb4cbb319C53
+    handler: src/EventHandlers.ts
+    events:
+    - event: ClaimedWinnings(uint256 indexed poolId, uint256 indexed predictionId, address indexed winner, address stakeToken, uint256 stakedAmount, uint256 wonAmount)
+    - event: CompletedPool(uint256 indexed poolId, uint256 snapshotTime, uint256 snapshotPrice, uint256 winAmount, uint256 noOfWinners)
+    - event: CreatedPool(uint256 indexed poolId, bytes32 indexed seedsHash)
+    - event: Initialized(uint64 version)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Predicted(uint256 indexed poolId, uint256 indexed predictionId, address indexed predicter, uint256 predictionPrice)
+    - event: RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
+    - event: RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: Upgraded(address indexed implementation)
+  - name: Clober
+    address:
+    - 0xfD845859628946B317A78A9250DA251114FbD846
+    handler: src/EventHandlers.ts
+    events:
+    - event: Initialized(uint64 version)
+    - event: OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: RouterMethodAdded(address indexed router, bytes4 method)
+    - event: RouterMethodRemoved(address indexed router, bytes4 method)
+    - event: Swap(address indexed user, address indexed inToken, address indexed outToken, uint256 amountIn, uint256 amountOut, address router, bytes4 method)
+    - event: Upgraded(address indexed implementation)
+  - name: Dusted
+    address:
+    - 0x18C9534dfe16a0314B66395F48549716FfF9AA66
+    handler: src/EventHandlers.ts
+    events:
+    - event: Claimed(address indexed user, uint256 tokenAmount, uint256 totalPointsClaimed)
+    - event: ClaimsToggled(bool enabled)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Withdraw(uint256 amount)
+  - name: Enjoyoors
+    address:
+    - 0x9FacfE94E5f0AD42672eC75a348a376B13Da86e1
+    handler: src/EventHandlers.ts
+    events:
+    - event: Deposit(address indexed token, address indexed user, uint256 amount)
+    - event: MinDepositChanged(address indexed token, uint256 _old, uint256 _new)
+    - event: NewTokenListed(address newToken)
+    - event: PauseClaims(address token)
+    - event: PauseDeposits(address token)
+    - event: PauseWithdrawals(address token)
+    - event: ResumeClaims(address token)
+    - event: ResumeDeposits(address token)
+    - event: ResumeWithdrawals(address token)
+    - event: RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
+    - event: RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: SupplyLimitDecreased(address indexed token, uint256 delta)
+    - event: SupplyLimitIncreased(address indexed token, uint256 delta)
+    - event: WithdrawalApproverChanged(address _old, address _new)
+    - event: WithdrawalClaimed(uint256 indexed requestId, uint256 amount)
+    - event: WithdrawalRequested(address indexed token, address indexed user, uint256 indexed requestId, uint256 amount)
+  - name: Kuru
+    address:
+    - 0x4B186949F31FCA0aD08497Df9169a6bEbF0e26ef
+    handler: src/EventHandlers.ts
+    events:
+    - event: Deposit(address owner, address token, uint256 amount)
+    - event: Withdrawal(address owner, address token, uint256 amount)
+  - name: madness
+    address:
+    - 0xC8527e96c3CB9522f6E35e95C0A28feAb8144f15
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 value)
+    - event: Burn(address indexed account, uint256 amount)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Suspended(bool suspended)
+    - event: Transfer(address indexed from, address indexed to, uint256 value)
+    - event: UpdateBlacklist(address account, bool isListed)
+    - event: UpdateOperator(address indexed operator, bool authorized)
+  - name: Magma
+    address:
+    - 0x2c9C959516e9AAEdB2C748224a41249202ca8BE7
+    handler: src/EventHandlers.ts
+    events:
+    - event: Deposit(address indexed depositor, uint256 indexed amount, uint256 gMonMinted, uint256 indexed referralId)
+    - event: Initialized(uint64 version)
+    - event: Withdraw(address indexed withdrawer, uint256 indexed amount, uint256 gMonBurned)
+  - name: monad2048
+    address:
+    - 0xe0FA8195AE92b9C473c0c0c12c2D6bCbd245De47
+    handler: src/EventHandlers.ts
+    events:
+    - event: NewGame(address indexed player, bytes32 indexed id, uint256 board)
+    - event: NewMove(address indexed player, bytes32 indexed id, uint256 move, uint256 result)
+  - name: Monorail
+    address:
+    - 0x7B5dF408da2356e9Eecda0492104E758A2B6913d
+    handler: src/EventHandlers.ts
+    events:
+    - event: Aggregated(address indexed sender, address indexed tokenIn, address indexed tokenOut, uint256 amount, uint256 destinationAmount, uint256 feeAmount)
+    - event: AggregatedTrade(address indexed router, address indexed tokenIn, address indexed tokenOut, uint256 amount)
+    - event: FeeMultiplierUpdated(uint256 oldFeeMultiplier, uint256 newFeeMultiplier)
+    - event: FeeReceiverUpdated(address indexed oldFeeReceiver, address indexed newFeeReceiver)
+    - event: NativeSenderAllowlistUpdated(address indexed sender, bool allowed)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: RouterAllowlistUpdated(address indexed router, bool allowed)
+    - event: TokenWithdrawn(address indexed token, address indexed to, uint256 amount)
+  - name: MonTools
+    address:
+    - 0xf7005a4D86d277A1D43CB49D05660d20c24d79f2
+    handler: src/EventHandlers.ts
+    events:
+    - event: BatchTransfer(address indexed from, address[] indexed to, uint256 amount)
+  - name: rugRumble
+    address:
+    - 0x262Fd7A243e9335A733c00de471525D9FeE8Abdb
+    handler: src/EventHandlers.ts
+    events:
+    - event: GameEnded(uint256 indexed gameId, address indexed winner, address indexed loser, uint256 epochId, uint256 rewardAmount, address winnerToken, address loserToken)
+    - event: GameSet(uint256 indexed gameId, uint256 indexed epochId, address token1, address token2, uint256 wagerAmount1, uint256 wagerAmount2)
+    - event: GameStarted(uint256 indexed gameId, address indexed player1, address indexed player2, uint256 epochId)
+    - event: TokenDeposited(uint256 indexed gameId, address indexed player, address indexed token, uint256 epochId, uint256 amount)
+    - event: WagerDistributed(uint256 indexed gameId, address indexed winner, uint256 winnerShare, uint256 vaultShare, uint256 protocolShare, address winnerToken, address loserToken)
+  - name: swingMonad
+    address:
+    - 0xaf38734983a68eDFA4C1d6DB403dfa28bbf4009a
+    handler: src/EventHandlers.ts
+    events:
+    - event: Deposit(address indexed user, uint256 amount)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Withdraw(address indexed user, uint256 amount)
+  - name: zkSwap
+    address:
+    - 0xa29812968fCC0c34bF89926A22939CafCe02C639
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
+    - event: ApprovalForAll(address indexed owner, address indexed operator, bool approved)
+    - event: Collect(uint256 indexed tokenId, address recipient, uint256 amount0, uint256 amount1)
+    - event: DecreaseLiquidity(uint256 indexed tokenId, uint128 liquidity, uint256 amount0, uint256 amount1)
+    - event: IncreaseLiquidity(uint256 indexed tokenId, uint128 liquidity, uint256 amount0, uint256 amount1)
+    - event: Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
+unordered_multichain_mode: true
